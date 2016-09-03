@@ -5,16 +5,16 @@ import (
 	"time"
 )
 
-type Singleton struct {
+type Singleton1 struct {
 	CreateTime time.Time
 }
 
-var instance *Singleton = nil
+var instance *Singleton1 = nil
 var once sync.Once
 
-func New() *Singleton {
+func New() *Singleton1 {
 	once.Do(func() {
-		instance = new(Singleton)
+		instance = new(Singleton1)
 		instance.CreateTime = time.Now()
 	})
 	return instance
